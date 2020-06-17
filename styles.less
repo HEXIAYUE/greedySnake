@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  min-height: 100vh;
+  font-size: 100px;
+}
+@media screen and (max-width:750px){
+#app{
+  display: block;
+}
+}
+body {
+  min-height: 100vh;
+  font-size: 0.16rem;
+  display: flex;
+  justify-content: center;
+
+}
+
+#app {
+
+  min-height: 100vh;
+  display: flex;
+
+  i {
+    font-size: 0.3rem;
+    color: green;
+  }
+
+  i:first-child {
+    color: red;
+  }
+
+  #mid {
+
+    #header {
+      margin-top: 0.5rem;
+      font-size: 0.3rem;
+      letter-spacing: 0.2rem;
+      font-family: cursive;
+      text-align: center;
+    }
+
+    #section {
+
+      margin-top: 10vh;
+
+      table {
+        width: 100%;
+        border: 1px solid #000;
+
+        .active {
+          background-color: red;
+        }
+
+        .header {
+          background-color: burlywood;
+        }
+
+        .green {
+          background-color: green;
+        }
+
+        tr {
+          td {
+            width: 0.2rem;
+            height: 0.2rem;
+          }
+        }
+
+      }
+    }
+  }
+
+  #right {
+    margin-left: 5vw;
+    padding-top: 20vh;
+
+    p:nth-child(1) {
+      font-size: 0.2rem;
+
+      span {
+        margin-left: 0.1rem;
+      }
+    }
+
+    button {
+      width: 1rem;
+      margin-top: 0.2rem;
+      cursor: pointer;
+    }
+
+   
+    p:nth-child(5){
+  
+      button {
+        width: 0.5rem;
+      }
+    }
+
+  }
+
+}

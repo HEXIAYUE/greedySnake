@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>贪吃蛇</title>
+  <script src="js/vue.js"></script>
+  <link rel="stylesheet/less" href="styles.less" />
+  <script src="js/less.min.js"></script>
+  <link rel="stylesheet" href="font/iconfont.css">
+</head>
+
+<body>
+  <div id="app">
+    <audio src="static/background.mp3" autoplay="autoplay" loop="loop">
+      背景声音
+    </audio>
+    <audio src="static/eatFood.mp3" ref="eatFood">吃食物的声音</audio>
+    <audio src="static/die.mp3" ref="die">死亡的声音</audio>
+    <div id="mid">
+      <div id="header">
+        <p><b>贪吃蛇</b><i class="iconfont">&#xe690;</i></p>
+      </div>
+      <div id="section">
+
+        <table border="1" cellspacing="0">
+          <tr v-for="(row, y) in rows" :key="y">
+            <td v-for="(col, x) in cols" :key="x"
+              :class="{'active': showSnake(x,y),'header':showHeader(x, y) ,'green':showFood(x,y)}"></td>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+    <div id="right">
+      <p><i class="iconfont">&#xe640;</i><span>分数：{{grader}}</span></p>
+
+      <button @click="start">开始</button>
+      <button @click="stop">暂停</button>
+      <p><button @click="changeWay(-2)"><i class="iconfont">&#xe644;</i></button></p>
+      <p><button @click="changeWay(-1)"><i class="iconfont">&#xe604;</i></button><button @click="changeWay(1)"><i
+            class="iconfont">&#xe643;</i></button></p>
+      <p><button @click="changeWay(2)"><i class="iconfont">&#xe642;</i></button></p>
+    </div>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>
